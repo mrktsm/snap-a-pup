@@ -45,7 +45,7 @@ The following **additional** features are implemented:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+One of the main challenges I encountered while building the app was navigating the API documentation, which I found difficult to understand at times. Additionally, figuring out how to apply the filters for the banned features proved to be tricky, as I had to ensure that the ban list correctly prevented certain attributes from appearing in future API calls.
 
 ## License
 
