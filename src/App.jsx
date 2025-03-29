@@ -12,6 +12,8 @@ function App() {
   const [temperament, setTemperament] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [bannedAttributes, setBannedAttributes] = useState([]);
+
   const getRandomDog = async () => {
     setLoading(true);
     try {
@@ -40,6 +42,17 @@ function App() {
     getRandomDog();
   }, []);
 
+  const handleButtonClick = (attribute) => {
+    setBannedAttributes(
+      (prevBannedAttributes) =>
+        prevBannedAttributes.includes(attribute)
+          ? prevBannedAttributes.filter((attr) => attr !== attribute) // Remove if already present
+          : [...prevBannedAttributes, attribute] // Add if not present
+    );
+  };
+
+  const isBanned = (attribute) => bannedAttributes.includes(attribute);
+
   return (
     <div className="app-container">
       {loading ? (
@@ -56,28 +69,31 @@ function App() {
             <div className="right-column">
               <div className="dog-attributes">
                 <div className="attribute">
-                  {/* <span>Breed Group</span> */}
                   <button
-                    className="attribute-button"
-                    onClick={() => alert(`Breed Group: ${breed}`)}
+                    className={`attribute-button ${
+                      isBanned(breed) ? "banned" : ""
+                    }`}
+                    onClick={() => handleButtonClick(breed)}
                   >
                     {breed}
                   </button>
                 </div>
                 <div className="attribute">
-                  {/* <span>Life Span</span> */}
                   <button
-                    className="attribute-button"
-                    onClick={() => alert(`Life Span: ${lifeSpan}`)}
+                    className={`attribute-button ${
+                      isBanned(lifeSpan) ? "banned" : ""
+                    }`}
+                    onClick={() => handleButtonClick(lifeSpan)}
                   >
                     {lifeSpan}
                   </button>
                 </div>
                 <div className="attribute">
-                  {/* <span>Temperament</span> */}
                   <button
-                    className="attribute-button temperament"
-                    onClick={() => alert(`Temperament: ${temperament}`)}
+                    className={`attribute-button temperament ${
+                      isBanned(temperament) ? "banned" : ""
+                    }`}
+                    onClick={() => handleButtonClick(temperament)}
                   >
                     {temperament}
                   </button>
@@ -88,7 +104,28 @@ function App() {
               </div>
             </div>
           </div>
-          <span> Banned Attributes </span>
+          <div>
+            <div
+              className={
+                bannedAttributes.length === 0
+                  ? "banned-container hidden"
+                  : "banned-container"
+              }
+            >
+              <h3>Banned Attributes:</h3>
+              <div>
+                {bannedAttributes.map((attribute) => (
+                  <button
+                    className="banned-button"
+                    key={attribute}
+                    onClick={() => handleButtonClick(attribute)}
+                  >
+                    {attribute}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

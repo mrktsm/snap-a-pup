@@ -114,6 +114,38 @@
   border-bottom: 0;
 }
 
+.attribute-button.banned {
+  background-color: #e57373; /* Softer, muted red */
+  border: 2px solid #e53935; /* Muted red border */
+  border-bottom: 5px solid #e53935; /* Darker red bottom border */
+}
+
+.banned-button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #e57373; /* Softer red */
+  color: white;
+  border: 2px solid #e53935; /* Muted red border */
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+
+.banned-button:hover {
+  background-color: #e53935; /* Slightly darker red on hover */
+  border-color: #c62828; /* Darker red border on hover */
+}
+
+.banned-button:active {
+  transform: translateY(2px); /* Slight movement on click */
+}
+
+.banned-button:focus {
+  outline: none; /* Remove outline on focus */
+}
+
 .attribute-button.temperament {
   height: auto;
   min-height: 44px;
@@ -167,4 +199,15 @@
   .image-container {
     height: 300px;
   }
+}
+
+.banned-container {
+  transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none; /* This ensures the element doesn't interfere with clicks */
+  height: 0; /* Optional: ensure it doesn't take space */
+  overflow: hidden; /* Optional: hide any child content */
 }
