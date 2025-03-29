@@ -8,7 +8,7 @@ Time spent: **3.5** hours spent in total
 
 ## Video Walkthrough
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/user-attachments/assets/f0e4bbda-6ef3-42fd-9b76-c16c9ab5b859' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Required Features
 
