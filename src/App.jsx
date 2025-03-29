@@ -22,13 +22,31 @@ function App() {
       );
       const data = await response.json();
 
+      // Ensure data has the breed information
       if (data[0]?.breeds?.length > 0) {
+        const breed = data[0].breeds[0].name;
+        const lifeSpan = data[0].breeds[0].life_span;
+        const temperament = data[0].breeds[0].temperament;
+
+        // Check if any attribute is banned
+        if (
+          bannedAttributes.includes(breed) ||
+          bannedAttributes.includes(lifeSpan) ||
+          bannedAttributes.includes(temperament)
+        ) {
+          // If any attribute is banned, retry fetching a new dog
+          getRandomDog();
+          return;
+        }
+
+        // If no attributes are banned, set the dog information
         setDogImage(data[0].url);
-        setDogName(data[0].breeds[0].name);
+        setDogName(breed);
         setBreed(data[0].breeds[0].breed_group || "Unknown");
-        setLifeSpan(data[0].breeds[0].life_span);
-        setTemperament(data[0].breeds[0].temperament);
+        setLifeSpan(lifeSpan);
+        setTemperament(temperament);
       } else {
+        // Retry if no breed information
         getRandomDog();
         return;
       }
