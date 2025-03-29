@@ -27,7 +27,6 @@ function App() {
         setLifeSpan(data[0].breeds[0].life_span);
         setTemperament(data[0].breeds[0].temperament);
       } else {
-        // Retry if no breed data
         getRandomDog();
         return;
       }
@@ -43,50 +42,55 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="dog-card">
-        {loading ? (
-          <div className="loading">Loading...</div>
-        ) : (
-          <>
-            <h1 className="dog-name">{dogName}</h1>
-            <div className="image-container">
-              <img src={dogImage} alt={dogName} className="dog-image" />
-            </div>
-            <div className="dog-attributes">
-              <div className="attribute">
-                <span>Breed Group</span>
-                <button
-                  className="attribute-button"
-                  onClick={() => alert(`Breed Group: ${breed}`)}
-                >
-                  {breed}
-                </button>
-              </div>
-              <div className="attribute">
-                <span>Life Span</span>
-                <button
-                  className="attribute-button"
-                  onClick={() => alert(`Life Span: ${lifeSpan}`)}
-                >
-                  {lifeSpan}
-                </button>
-              </div>
-              <div className="attribute">
-                <span>Temperament</span>
-                <button
-                  className="attribute-button temperament"
-                  onClick={() => alert(`Temperament: ${temperament}`)}
-                >
-                  {temperament}
-                </button>
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        <div className="content-wrapper">
+          <h1 className="dog-name">{dogName}</h1>
+          <div className="main-content">
+            <div className="left-column">
+              <div className="image-container">
+                <img src={dogImage} alt={dogName} className="dog-image" />
               </div>
             </div>
-            <button className="fetch-button" onClick={getRandomDog}>
-              Fetch Another Dog!
-            </button>
-          </>
-        )}
-      </div>
+            <div className="right-column">
+              <div className="dog-attributes">
+                <div className="attribute">
+                  {/* <span>Breed Group</span> */}
+                  <button
+                    className="attribute-button"
+                    onClick={() => alert(`Breed Group: ${breed}`)}
+                  >
+                    {breed}
+                  </button>
+                </div>
+                <div className="attribute">
+                  {/* <span>Life Span</span> */}
+                  <button
+                    className="attribute-button"
+                    onClick={() => alert(`Life Span: ${lifeSpan}`)}
+                  >
+                    {lifeSpan}
+                  </button>
+                </div>
+                <div className="attribute">
+                  {/* <span>Temperament</span> */}
+                  <button
+                    className="attribute-button temperament"
+                    onClick={() => alert(`Temperament: ${temperament}`)}
+                  >
+                    {temperament}
+                  </button>
+                </div>
+                <button className="fetch-button" onClick={getRandomDog}>
+                  Fetch Another Dog!
+                </button>
+              </div>
+            </div>
+          </div>
+          <span> Banned Attributes </span>
+        </div>
+      )}
     </div>
   );
 }
