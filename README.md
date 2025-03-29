@@ -1,10 +1,14 @@
-# Web Development Project 4 - *Name of App Here*
+# Web Development Project 4 - *Snap A Pup*
 
-Submitted by: **Your Name Here**
+Submitted by: **Marko Tsymbaliuk**
 
-This web app: **insert description**
+This web app: **Snap a Pup lets you discover random dog breeds and images with a click! Ban breeds, life spans, or temperaments you’re not a fan of, and the app won’t show them again. It’s a fun, interactive way to meet new pups—all in a sleek, mobile-friendly design!**
 
-Time spent: **X** hours spent in total
+Time spent: **3.5** hours spent in total
+
+## Video Walkthrough
+
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Required Features
 
@@ -38,10 +42,6 @@ The following **additional** features are implemented:
 * [x] CSS styling for a responsive layout
 * [x] Mobile responsiveness
 * [x] Deployment on Vercel
-
-## Video Walkthrough
-
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Notes
 
