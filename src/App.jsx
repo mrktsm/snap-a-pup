@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API_KEY =
-  "live_7ny1qsx8IJhBDcYvJHEJQ4CBG1pkSX7ZcXylN7vRs4QBG7jVPXDFho7GIk6rl47V";
+const API_KEY = import.meta.env.VITE_REACT_APP_DOG_API_KEY;
+console.log("API Key:", API_KEY);
 
 function App() {
   const [dogImage, setDogImage] = useState(null);
