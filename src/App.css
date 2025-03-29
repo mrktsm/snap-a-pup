@@ -22,6 +22,7 @@ body {
   width: 100%;
   max-width: 960px;
   padding: 30px;
+  margin: 0 auto; /* Center the content */
 }
 
 .dog-name {
@@ -36,6 +37,8 @@ body {
 .main-content {
   display: flex;
   gap: 40px;
+  justify-content: center; /* Ensure this is centered */
+  width: 100%; /* Ensure it's taking full width */
 }
 
 .left-column {
@@ -201,10 +204,28 @@ body {
 @media (max-width: 768px) {
   .main-content {
     flex-direction: column;
+    width: 100%;
+    gap: 20px; /* Reduced gap */
   }
 
   .image-container {
     height: 300px;
+    width: 100%;
+  }
+
+  .content-wrapper {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dog-attributes {
+    width: 100%;
   }
 }
 
